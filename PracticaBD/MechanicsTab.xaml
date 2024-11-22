@@ -1,0 +1,29 @@
+﻿<Window x:Class="PracticaBD.MechanicsTab"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PracticaBD"
+        mc:Ignorable="d"
+        Title="MechanicsTab" Height="450" Width="800">
+    <Grid>
+        <DataGrid Name="dgMechanics" HorizontalAlignment="Left" Height="226" AutoGenerateColumns="False" Margin="36,28,0,0" VerticalAlignment="Top" Width="487">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding mechanic_id}" Header="mechanic_id"/>
+                <DataGridTextColumn Binding="{Binding first_name}" Header="first_name"/>
+                <DataGridTextColumn Binding="{Binding last_name}" Header="last_name"/>
+                <DataGridTextColumn Binding="{Binding phone_number}" Header="phone_number"/>
+                <DataGridTextColumn Binding="{Binding specialization}" Header="specialization"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBox Name="tbMechanic_id" HorizontalAlignment="Left" Height="23" Margin="615,44,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="tbFirst_name" HorizontalAlignment="Left" Height="23" Margin="617,76,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="tbLast_name" HorizontalAlignment="Left" Height="23" Margin="617,110,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="tbPhone_number" HorizontalAlignment="Left" Height="23" Margin="619,143,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="tbSpecialization" HorizontalAlignment="Left" Height="23" Margin="620,177,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Добавить" HorizontalAlignment="Left" Margin="652,290,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <Button Content="Удалить" HorizontalAlignment="Left" Margin="652,320,0,0" VerticalAlignment="Top" Click="Button_Click_1"/>
+        <Button Content="Обновить" HorizontalAlignment="Left" Margin="652,350,0,0" VerticalAlignment="Top" Click="Button_Click_2"/>
+        <Button Content="Экспорт" HorizontalAlignment="Left" Margin="553,351,0,0" VerticalAlignment="Top" Click="DelB_Click"/>
+    </Grid>
+</Window>

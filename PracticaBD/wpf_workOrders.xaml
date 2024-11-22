@@ -1,0 +1,99 @@
+﻿<Window x:Class="PracticaBD.wpf_workOrders"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PracticaBD"
+        mc:Ignorable="d"
+        Title="wpf_workOrders" Height="450" Width="800">
+    <Grid>
+        <!-- DataGrid для отображения WorkOrders -->
+        <DataGrid Name="dgWorkOrders" 
+              HorizontalAlignment="Left" 
+              Height="226" 
+              AutoGenerateColumns="False" 
+              Margin="36,28,0,0" 
+              VerticalAlignment="Top" 
+              Width="518" 
+              SelectionChanged="dgWorkOrders_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding work_order_id}" Header="Work Order ID" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Car.model}" Header="Car Model"/>
+                <DataGridTextColumn Binding="{Binding Car.license_plate}" Header="License Plate"/>
+                <DataGridTextColumn Binding="{Binding Mechanic.first_name}" Header="Mechanic First Name"/>
+                <DataGridTextColumn Binding="{Binding Mechanic.last_name}" Header="Mechanic Last Name"/>
+                <DataGridTextColumn Binding="{Binding Service.description}" Header="Service"/>
+                <DataGridTextColumn Binding="{Binding work_order_date}" Header="Order Date"/>
+                <DataGridTextColumn Binding="{Binding completion_date}" Header="Completion Date"/>
+                <DataGridTextColumn Binding="{Binding status}" Header="Status"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- ComboBoxes для выбора связанных сущностей -->
+        <ComboBox Name="cbCar" 
+              HorizontalAlignment="Left" 
+              Margin="585,47,0,0" 
+              VerticalAlignment="Top" 
+              Width="192"
+              DisplayMemberPath="model"
+              SelectedValuePath="car_id"/>
+        <ComboBox Name="cbMechanic" 
+              HorizontalAlignment="Left" 
+              Margin="585,83,0,0" 
+              VerticalAlignment="Top" 
+              Width="191"
+              DisplayMemberPath="last_name"
+              SelectedValuePath="mechanic_id"/>
+        <ComboBox Name="cbService" 
+              HorizontalAlignment="Left" 
+              Margin="585,124,0,0" 
+              VerticalAlignment="Top" 
+              Width="192"
+              DisplayMemberPath="description"
+              SelectedValuePath="service_id"/>
+
+        <!-- TextBoxes для ввода остальных данных -->
+        <TextBox Name="tbOrderDate" 
+             HorizontalAlignment="Left" 
+             Height="23" 
+             Margin="588,169,0,0" 
+             TextWrapping="Wrap" 
+             Text="" 
+             VerticalAlignment="Top" 
+             Width="200"/>
+        <TextBox Name="tbCompletionDate" 
+             HorizontalAlignment="Left" 
+             Height="23" 
+             Margin="590,0,0,0" 
+             TextWrapping="Wrap" 
+             Text="" 
+             VerticalAlignment="Center" 
+             Width="200"/>
+        <TextBox Name="tbStatus" 
+             HorizontalAlignment="Left" 
+             Height="23" 
+             Margin="592,246,0,0" 
+             TextWrapping="Wrap" 
+             Text="" 
+             VerticalAlignment="Top" 
+             Width="200"/>
+
+        <!-- Кнопки действий -->
+        <Button Content="Добавить" 
+            HorizontalAlignment="Left" 
+            Margin="700,290,0,0" 
+            VerticalAlignment="Top" 
+            Click="AddWorkOrder_Click"/>
+        <Button Content="Удалить" 
+            HorizontalAlignment="Left" 
+            Margin="700,320,0,0" 
+            VerticalAlignment="Top" 
+            Click="DeleteWorkOrder_Click"/>
+        <Button Content="Обновить" 
+            HorizontalAlignment="Left" 
+            Margin="700,350,0,0" 
+            VerticalAlignment="Top" 
+            Click="UpdateWorkOrder_Click"/>
+    </Grid>
+
+</Window>

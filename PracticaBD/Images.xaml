@@ -1,0 +1,14 @@
+﻿<Window x:Class="PracticaBD.Images"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PracticaBD"
+        mc:Ignorable="d"
+        Title="Images" Height="450" Width="800">
+    <Grid>
+        <Image x:Name="SelectedImage" HorizontalAlignment="Left" Height="301" VerticalAlignment="Top" Width="360" Margin="215,31,0,0"/>
+        <Button x:Name="SelectImage" Content="Выбрать изображение" HorizontalAlignment="Center" Width="800" Height="30" Margin="0,307,0,0" Click="SelectImageClick" FontSize="20"/>
+        <Button x:Name="LoadImage" Content="Загрузить изображение" HorizontalAlignment="Center" Click="LoadImageClick" Margin="0,397,0,0" Width="800" Height="30" FontSize="20"/>
+    </Grid>
+</Window>

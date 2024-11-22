@@ -1,0 +1,52 @@
+﻿<Window x:Class="PracticaBD.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PracticaBD"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <DataGrid Name="dgCars" HorizontalAlignment="Left" Height="226" AutoGenerateColumns="False" Margin="36,28,0,0" VerticalAlignment="Top" Width="487" BorderBrush="#FF000203">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding car_id}" Header="Car ID"/>
+                <DataGridTextColumn Binding="{Binding CustomerName}" Header="Customer"/>
+                <DataGridTextColumn Binding="{Binding brand}" Header="Brand"/>
+                <DataGridTextColumn Binding="{Binding model}" Header="Model"/>
+                <DataGridTextColumn Binding="{Binding year}" Header="Year"/>
+                <DataGridTextColumn Binding="{Binding license_plate}" Header="License Plate"/>
+                <DataGridTextColumn Binding="{Binding vin}" Header="VIN"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <TextBox Name="tbCar_ID" HorizontalAlignment="Left" Height="23" Margin="615,44,0,0" VerticalAlignment="Top" Width="120" />
+        <ComboBox Name="tbCustomerID" HorizontalAlignment="Left" Height="23" Margin="617,76,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="tbCustomerID_SelectionChanged"/>
+        <TextBox Name="tbBrand" HorizontalAlignment="Left" Height="23" Margin="617,110,0,0" VerticalAlignment="Top" Width="120" />
+        <TextBox Name="tbmodel" HorizontalAlignment="Left" Height="23" Margin="619,143,0,0" VerticalAlignment="Top" Width="120" />
+        <TextBox Name="tbyear" HorizontalAlignment="Left" Height="23" Margin="620,177,0,0" VerticalAlignment="Top" Width="120" TextChanged="tbyear_TextChanged"/>
+        <TextBox Name="tblicense_plate" HorizontalAlignment="Left" Height="23" Margin="620,216,0,0" VerticalAlignment="Top" Width="120" />
+        <TextBox Name="tbvin" HorizontalAlignment="Left" Height="23" Margin="618,254,0,0" VerticalAlignment="Top" Width="120" />
+
+        <Button Content="Добавить" HorizontalAlignment="Left" Margin="652,290,0,0" VerticalAlignment="Top" Click="Button_Click" />
+        <Button Content="Удалить" HorizontalAlignment="Left" Margin="652,320,0,0" VerticalAlignment="Top" Click="Button_Click_1" />
+        
+        <Button Content="Обновить" HorizontalAlignment="Left" Margin="652,350,0,0" VerticalAlignment="Top" Click="Button_Click_2" />
+        <Button Content="Экспорт" HorizontalAlignment="Left" Margin="496,378,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click_Export" Foreground="White">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FFA71919" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+
+        <Button Content="Далее" HorizontalAlignment="Left" Margin="494,345,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click_NextWindow" Foreground="#FFFFFEFE">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FFFF9797" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+    </Grid>
+</Window>

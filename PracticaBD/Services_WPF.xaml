@@ -1,0 +1,25 @@
+﻿<Window x:Class="PracticaBD.Services_WPF"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PracticaBD"
+        mc:Ignorable="d"
+        Title="Services_WPF" Height="450" Width="800">
+    <Grid>
+        <DataGrid Name="dgServices" HorizontalAlignment="Left" Height="226" AutoGenerateColumns="False" Margin="36,28,0,0" VerticalAlignment="Top" Width="487" SelectionChanged="dgServices_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding service_id}" Header="Service_ID"/>
+                <DataGridTextColumn Binding="{Binding service_name}" Header="Service Name"/>
+                <DataGridTextColumn Binding="{Binding service_description}" Header="Description"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBox Name="tbServiceID" HorizontalAlignment="Left" Height="23" Margin="617,76,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="tbServiceName" HorizontalAlignment="Left" Height="23" Margin="617,110,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="tbServiceDescription" HorizontalAlignment="Left" Height="60" Margin="617,143,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Добавить" HorizontalAlignment="Left" Margin="652,230,0,0" VerticalAlignment="Top" Click="Button_Add"/>
+        <Button Content="Удалить" HorizontalAlignment="Left" Margin="652,260,0,0" VerticalAlignment="Top" Click="Button_Delete"/>
+        <Button Content="Обновить" HorizontalAlignment="Left" Margin="652,290,0,0" VerticalAlignment="Top" Click="Button_Update"/>
+    </Grid>
+
+</Window>

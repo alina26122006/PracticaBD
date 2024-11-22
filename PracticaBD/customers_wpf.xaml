@@ -1,0 +1,36 @@
+﻿<Window x:Class="PracticaBD.customers_wpf"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PracticaBD"
+        mc:Ignorable="d"
+        Title="customers_wpf" Height="450" Width="800">
+    <Grid>
+        <DataGrid Name="dgCustomers" HorizontalAlignment="Left" Height="226" AutoGenerateColumns="False" Margin="36,28,0,0" VerticalAlignment="Top" Width="487" SelectionChanged="dgCustomers_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding customer_id}" Header="Customer_ID"/>
+                <DataGridTextColumn Binding="{Binding first_name}" Header="Имя"/>
+                <DataGridTextColumn Binding="{Binding last_name}" Header="Фамилия"/>
+                <DataGridTextColumn Binding="{Binding phone_number}" Header="номер телефона"/>
+                <DataGridTextColumn Binding="{Binding email}" Header="email"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBox Name="tbCustomerID" HorizontalAlignment="Left" Height="23" Margin="617,76,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="tbfirst_name" HorizontalAlignment="Left" Height="23" Margin="617,110,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="tblast_name" HorizontalAlignment="Left" Height="23" Margin="619,143,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="tbphone_number" HorizontalAlignment="Left" Height="23" Margin="620,177,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="tbemail" HorizontalAlignment="Left" Height="23" Margin="620,216,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Добавить" HorizontalAlignment="Left" Margin="652,290,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <Button Content="Удалить" HorizontalAlignment="Left" Margin="652,320,0,0" VerticalAlignment="Top" Click="Button_Click_1"/>
+        <Button Content="Обновить" HorizontalAlignment="Left" Margin="652,350,0,0" VerticalAlignment="Top" Click="Button_Click_2"/>
+        <Button Content="Далее" HorizontalAlignment="Left" Margin="494,345,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click_NextWindow" Foreground="#FFFFFEFE">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FFFF9797" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+    </Grid>
+</Window>
